@@ -1,0 +1,10 @@
+Sjors 6000000.0
+Jan 5500000.0
+Micha 5500000.0
+Niels 5000000.0
+Matthijs 4500000.0
+Jacky 4000000.0
+Xu 678.755
+default 292.1722
+default 276.77222
+default 242.54999
