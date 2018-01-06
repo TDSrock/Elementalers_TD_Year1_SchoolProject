@@ -48,11 +48,15 @@ This was one of the most important methods in the whole system which made the to
 Other systems I loved making was the Pathfinding, this was the first time for me implementing A* let alone pathfinding. The event system was also a joy to write. It was both a system to make random achievements and a way to force to player to take certain actions at certain times. We never ended up using this system too it's fullets potential becuase we had only enough time to implement a playable tutorial stage.
 
 ![](https://i.imgur.com/eqx81A3.png)
-Image of the title screen
+Image of the title screen.
 
 ![](https://i.imgur.com/IpxfExw.jpg)
-In-game before enemy spawn
+In-game before enemy spawn.
+
+![](https://i.imgur.com/J9XPKC2.jpg)
+In-game during a wave.
 
 The UI of this game was intresting to create. Most people however couldn't understand how it worked. Clearly we didn't test it enough **and** the design was not intuitive enough for the standard user. Ontop of the fact that most of the people at school didn't understand the genre... This made the game a technical marvel, but unfortunatly a visual and game-play failure. We managed to etch out a 7/10 for this project. On the techical review I did receive a 9/10 though, which is something I guess...
 
-Download builds of the game [HERE](https://drive.google.com/open?id=1IoBqrV4zPO2ZC3OpqSieT7vr5cUenXKf)
+Download builds of the game [HERE](https://drive.google.com/open?id=1IoBqrV4zPO2ZC3OpqSieT7vr5cUenXKf).
+If you find any bugs feel free to report them on the public github page this project is attached too(see links above)
