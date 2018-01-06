@@ -11,7 +11,8 @@ Huge swaths of the game's logic were built swiftly in the first couple of days. 
 If you look closely at the code base you'll notice that this isn't entirly acurate, the rocks for example inherit from the tower class as the static objects class was forgetten about. But variouse other components were implemented smoothly.
 
 One of the systems I loved was the combination system. This system made it so that towers placed in close proximity with one-another can combine into a new more powerfull tower. Looking at the code it's hard for me to decipher exactly how it worked. It's a good thing I left behind some comments.
-```//check the list, see if there are combinations that are valid. If so place them there. If not place them in the invalid list.
+```Java
+//check the list, see if there are combinations that are valid. If so place them there. If not place them in the invalid list.
   public void checkCombineList() {
 
     ArrayList<Class> myClasses = new ArrayList<Class>();
