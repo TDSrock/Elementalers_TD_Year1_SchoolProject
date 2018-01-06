@@ -1,44 +1,58 @@
-## Welcome to GitHub Pages
+# [](#header-1)Elementalers Tower Defense
 
-You can use the [editor on GitHub](https://github.com/TDSrock/Elementalers_TD_Year1_SchoolProject/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Elementalers Tower defense was the first project the HvA had thrown at us(during the FYS(Fasten Your Seatbelts) project. This project for us was mostly as simple as "Create any game you want". The only conditions that were thrown at us were that we had to make sure te game was 2D and that the game was built in Processing. Which for those unfamilair with processing meant Java. Now I'm not a huge fan of Java but that doesn't mean I can't create a game using it. And lastly we were also forced to keep our controller schema to six buttons, the arrow keys and Z and X.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Within the project I quickly attained the role of Project Lead as the core concept was my idea (ontop of that I always wanted to make a tower defense) and that I clearly have the most experience from my group. We had two guys with HTML and CSS exerpience but that was about it. The other four  started from scratch. One of which left us somewhere around the end of the first month.
 
-### Markdown
+Huge swaths of the game's logic were built swiftly in the first couple of days. I quickly put a basic gameloop into the game along with a basic structure for the object instance, this would be the start of our inhertince schema which when drawn out now looks like this:
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+![](https://i.imgur.com/Oxkfwsx.png)
 
-```markdown
-Syntax highlighted code block
+If you look closely at the code base you'll notice that this isn't entirly acurate, the rocks for example inherit from the tower class as the static objects class was forgetten about. But variouse other components were implemented smoothly.
 
-# Header 1
-## Header 2
-### Header 3
+One of the systems I loved was the combination system. This system made it so that towers placed in close proximity with one-another can combine into a new more powerfull tower. Looking at the code it's hard for me to decipher exactly how it worked. It's a good thing I left behind some comments.
+```//check the list, see if there are combinations that are valid. If so place them there. If not place them in the invalid list.
+  public void checkCombineList() {
 
-- Bulleted
-- List
+    ArrayList<Class> myClasses = new ArrayList<Class>();
+    for (Basic_Tower t : combineTowerList) {//move data from combineTowerList to classes. this makes checking stuff easier
+      myClasses.add(t.getClass());
+    }
 
-1. Numbered
-2. List
+    //clear both lists we start from scratch
+    validCombineList.clear();
+    invalidCombineList = new ArrayList<ArrayList<Class>>(myCombinationsList);//assume everything is invalid
+    //Figure out what we have exactly with class/count pairs
+    for (ArrayList<Class> s : myCombinationsList) {
+      ArrayList<Class> myClassesDupe = new ArrayList<Class>(myClasses);//dupe this list. We'll remove stuff from it that way we won't count the same tower twice.
+      int requirements = s.size() - 1;//count self
+    currentCombination:
+      for (Class c : s) {
+        if (myClassesDupe.contains(c)) {
+          requirements--;
+          myClassesDupe.remove(c);//prevent confirming the same thing over and over again
+          if (requirements == 0) {
+            validCombineList.add(s);
+            break currentCombination;
+          }
+        }
+      }
+    }
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+    int n = 0;
+    combinationAviable = (validCombineList.size() >= 1); //if there are any combinations possible, it is True
+  }
 ```
+This was one of the most important methods in the whole system which made the tower look within itself to see if it was possible for it to combine into something with it's neighboring towers.
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+Other systems I loved making was the Pathfinding, this was the first time for me implementing A* let alone pathfinding. The event system was also a joy to write. It was both a system to make random achievements and a way to force to player to take certain actions at certain times. We never ended up using this system too it's fullets potential becuase we had only enough time to implement a playable tutorial stage.
 
-### Jekyll Themes
+![](https://i.imgur.com/eqx81A3.png)
+Image of the title screen
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/TDSrock/Elementalers_TD_Year1_SchoolProject/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+![](https://i.imgur.com/IpxfExw.jpg)
+In-game before enemy spawn
 
-### Support or Contact
+The UI of this game was intresting to create. Most people however couldn't understand how it worked. Clearly we didn't test it enough **and** the design was not intuitive enough for the standard user. Ontop of the fact that most of the people at school didn't understand the genre... This made the game a technical marvel, but unfortunatly a visual and game-play failure. We managed to etch out a 7/10 for this project. On the techical review I did receive a 9/10 though, which is something I guess...
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
-
-# NOTE
-This project was built in Processing. So if you whish to run it and or make changes you'll have to install this godforsaken thing:(
-(I don't like this thing if you hand't noticed)
-We also used the Sound 1.3.2Sound library made by The Processing Foundation, You'll probly need it or uncomment the soundEngine related code
-
-[Download Processing here](https://processing.org/download/)
+Download builds of the game [HERE](https://drive.google.com/open?id=1IoBqrV4zPO2ZC3OpqSieT7vr5cUenXKf)
