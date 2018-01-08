@@ -62,4 +62,4 @@ The UI of this game was intresting to create. Most people however couldn't under
 Download builds of the game [HERE](https://drive.google.com/open?id=1IoBqrV4zPO2ZC3OpqSieT7vr5cUenXKf).
 If you find any bugs feel free to report them on the public github page this project is attached too(see links above)
 
-[back](./)
+[back](https://tdsrock.github.io/Projects)
