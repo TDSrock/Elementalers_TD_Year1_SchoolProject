@@ -1,6 +1,6 @@
 # [](#header-1)Elementalers Tower Defense
 
-Elementalers Tower defense was the first project the HvA had thrown at us(during the FYS(Fasten Your Seatbelts) project. This project for us was mostly as simple as "Create any game you want". The only conditions that were thrown at us were that we had to make sure te game was 2D and that the game was built in Processing. Which for those unfamilair with processing meant Java. Now I'm not a huge fan of Java but that doesn't mean I can't create a game using it. And lastly we were also forced to keep our controller schema to six buttons, the arrow keys and Z and X.
+Elementalers Tower defense was the first project the HvA had thrown at us(during the FYS(Fasten Your Seatbelts) project. This project for us was mostly as simple as "Create any game you want". The only conditions that we had to keep in mind were; that the game was 2D, that the game was built in Processing (which for those unfamilair with processing meant Java) and lastly we were also forced to keep our controller schema to six buttons, the arrow keys and Z and X.
 
 Within the project I quickly attained the role of Project Lead as the core concept was my idea (ontop of that I always wanted to make a tower defense) and that I clearly have the most experience from my group. We had two guys with HTML and CSS exerpience but that was about it. The other four  started from scratch. One of which left us somewhere around the end of the first month.
 
@@ -10,7 +10,7 @@ Huge swaths of the game's logic were built swiftly in the first couple of days. 
 
 If you look closely at the code base you'll notice that this isn't entirly acurate, the rocks for example inherit from the tower class as the static objects class was forgetten about. But variouse other components were implemented smoothly.
 
-One of the systems I loved was the combination system. This system made it so that towers placed in close proximity with one-another can combine into a new more powerfull tower. Looking at the code it's hard for me to decipher exactly how it worked. It's a good thing I left behind some comments.
+One of the systems I loved was the combination system. This system made it so that towers placed in close proximity with one-another can combine into a new more powerfull tower.
 ```Java
 //check the list, see if there are combinations that are valid. If so place them there. If not place them in the invalid list.
   public void checkCombineList() {
